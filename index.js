@@ -38,25 +38,27 @@ Lincoln.on('message', async message => {
 
 Lincoln.on('message', function(message) {
   if (message.content === '!help') {
-    const embed = new Discord.MessageEmbed()
-    .setTitle("Help")
-    .addField("Maths")
-    .setDescription("`!add number1 number2` `!div number1 number2` `!mul number1 number2` `!sub number1 number2`")
-    .addField("Moderator")
-    .setDescription("`!ban @user` `!kick @user` `!clear number of messages between 1 to 99`")
-    .addField("Games")
-    .setDescription("`!tictactoe @user or alone with Lincoln` `!snake`")
-    .addField("Music")
-    .setDescription("`!play` or if you want more commands and informations, go on the following link :link: : __***https://bit.ly/3knp2rU***__")
-    .addField("Other")
-    .setDescription("`!hello Lincoln` `!ping` `!about` `!tasks`")
-    .setTimestamp()
-    .setFooter("Lincoln is at your service")
-    .setColor('#5DADE2')
-    message.channel.send(embed)
+    const helpembed = new Discord.MessageEmbed()
+	.setColor('#2ECC71')
+	.setTitle('Help')
+	.setAuthor('Lincoln', 'https://bit.ly/3mrvwJ0')
+	.setDescription("Here's is what Lincoln can do.")
+	.setThumbnail('https://bit.ly/3gtw914')
+	.addFields(
+		{ name: 'Maths', value: '`!add number1 number2` `!div number1 number2` `!mul number1 number2` `!sub number1 number2`', inline: true },
+		{ name: 'Moderator', value: '`!ban @user` `!kick @user` `!clear number of messages between 1 to 99`', inline: true },
+    { name: 'Games', value: '`!tictactoe @user or alone with Lincoln` `!snake`', inline: true },
+    { name: 'Music', value: '`!play` or if you want more commands and informations, go on the following link :link: : __***https://bit.ly/3knp2rU***__', inline: true },
+    { name: 'Other', value: '`!hello Lincoln` `!ping` `!about` `!tasks`', inline: true },
+	)
+	.setTimestamp()
+	.setFooter('Lincoln at your service');
+
+  channel.send(helpembed);
 
   }
- });
+
+  });
 
 Lincoln.on('message', function(message) {
   if (message.content === '!about') {
