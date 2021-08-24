@@ -36,44 +36,7 @@ Lincoln.on('message', async message => {
 });
 
 
-Lincoln.on('message', function(message) {
-  if (message.content === '!help') {
-    const helpembed = new Discord.MessageEmbed()
-	.setColor('#2ECC71')
-	.setTitle('Help')
-	.setAuthor('Lincoln')
-	.setDescription("Here's what Lincoln can do.")
-	.setThumbnail('https://img.icons8.com/fluency/96/000000/help.png')
-	.addFields(
-		{ name: 'Maths', value: '`!add number1 number2` | `!div number1 number2` | `!mul number1 number2` | `!sub number1 number2`', inline: true },
-		{ name: 'Moderator', value: '`!ban @user` | `!kick @user` | `!clear number of messages between 1 to 99`', inline: true },
-    { name: 'Games', value: '`!tictactoe @user or alone with Lincoln` | `!snake`', inline: true },
-    { name: 'Music', value: '`!play` and if you want more commands and informations, go on the following link :link: : __***https://bit.ly/3knp2rU***__', inline: true },
-    { name: 'Other', value: '`!hello Lincoln` | `!ping` | `!about` | `!tasks`', inline: true },
-	)
-	.setTimestamp()
-	.setFooter('Lincoln at your service');
 
-  message.channel.send(helpembed);
-
-  }
-
-  
-});
-
-Lincoln.on('message', function(message) {
-  if (message.content === '!about') {
-    const embed = new Discord.MessageEmbed()
-    .setTitle("About Lincoln")
-    .setDescription("Lincoln :robot: has been created by DarkLight#3008 and NinDev#2933 :grinning: using nodejs (https://nodejs.org/en/) and the JavaScript programming language (https://developer.mozilla.org/en-US/docs/Web/JavaScript) !")
-    .setTimestamp()
-    .setFooter("Lincoln is at your service")
-    .setColor('#5DADE2')
-    message.channel.send(embed)
-
-  }
- });
- 
 Lincoln.on('message', function(message) {
   if(message.content === "!tasks") {
     
@@ -128,10 +91,10 @@ Lincoln.on("message", function(message) {
     }
 
 
-  else if (command === "add") {
+  else if (command === "addi") {
     const numArgs = args.map(x => parseFloat(x));
-    const add = numArgs.reduce((counter, x) => counter += x);
-    message.reply(`The result :arrow_forward: ${add}:exclamation:`);
+    const addi = numArgs.reduce((counter, x) => counter += x);
+    message.reply(`The result :arrow_forward: ${addi}:exclamation:`);
   }
   
    
@@ -151,13 +114,40 @@ Lincoln.on("message", function(message) {
     const sub = numArgs.reduce((counter, x) => counter -= x);
     message.reply(`The result :arrow_forward: ${sub}:exclamation:`);
   }
-});
 
-Lincoln.on('guildCreate', guild => {
-  const channel = guild.channels.cache.find(channel => channel.type === 'text' && channel.permissionsFor(guild.me).has('SEND_MESSAGES'))
-  message.channel.send("Thanks for inviting Lincoln to your server :smiley:")
-  message.channel.send("Here is what Lincoln can Make : `!hello Lincoln`, `!ping`, `!add`, `!div`, `!mul`, `!sub`, `!clear`, `!ban`, `!kick`, `!tasks`, `!snake`, `!tictactoe`, `!about`")
-})
+  else if (command === 'help') {
+    const helpembed = new Discord.MessageEmbed()
+	.setColor('#2ECC71')
+	.setTitle('Help')
+	.setAuthor('Lincoln')
+	.setDescription("Here's what Lincoln can do.")
+	.setThumbnail('https://img.icons8.com/fluency/96/000000/help.png')
+	.addFields(
+		{ name: 'Maths', value: '`!addi __***number1 number2***__` | `!div __***number1 number2***__` | `!mul __***number1 number2***__` | `!sub __***number1 number2***__`', inline: true },
+		{ name: 'Moderator', value: '`!ban @user` | `!kick @user` | `!clear number of messages between 1 to 99`', inline: true },
+    { name: 'Games', value: '`!tictactoe @user or alone with Lincoln` | `!snake`', inline: true },
+    { name: 'Music', value: '`!play __***music name***__`  | `!skip`  | `!stop` | `!add __***music name***___`', inline: true },
+    { name: 'Other', value: '`!hello Lincoln` | `!ping` | `!about` | `!tasks`  | `!help`', inline: true },
+	)
+	.setTimestamp()
+	.setFooter('Lincoln at your service');
+
+  message.channel.send(helpembed);
+
+  }
+
+  else if (command === 'about') {
+    const embed = new Discord.MessageEmbed()
+    .setTitle("About Lincoln")
+    .setDescription("Lincoln :robot: has been created by DarkLight#3008 and NinDev#2933 :grinning: using nodejs (https://nodejs.org/en/) and the JavaScript programming language (https://developer.mozilla.org/en-US/docs/Web/JavaScript) !")
+    .setTimestamp()
+    .setFooter("Lincoln is at your service")
+    .setColor('#5DADE2')
+    message.channel.send(embed)
+
+  }
+
+});
 
 Lincoln.on('message', message => {
   if (!message.guild) return;
@@ -288,10 +278,6 @@ Lincoln.on('message', message => {
  }
 
 });
-
-
-
-
 
 
 Lincoln.login(process.env.token);
