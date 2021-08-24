@@ -4,7 +4,7 @@ const SnakeGame = require('snakecord');
 
 const math = require('mathjs');
 
-const MusicBot = require("discord-music-system");
+const { MusicBot } = require("discord-music-system");
 
 const TicTacToe = require('discord-tictactoe')
 
