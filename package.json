@@ -1,0 +1,29 @@
+{
+  "name": "lincoln-bot",
+  "version": "1.0.0",
+  "description": "Bot made by DarkLight#3008",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AgentGecko629/Lincoln-Bot.git"
+  },
+  "author": "DarkLight",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AgentGecko629/Lincoln-Bot/issues"
+  },
+  "engines": {
+    "node": "^16.6.1"
+  },
+  "homepage": "https://github.com/AgentGecko629/Lincoln-Bot#readme",
+  "dependencies": {
+    "discord-music-system": "^3.3.15",
+    "discord-tictactoe": "^2.1.1",
+    "discord.js": "^12.5.3",
+    "mathjs": "^9.4.4",
+    "snakecord": "^1.0.8"
+  }
+}
