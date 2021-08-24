@@ -41,15 +41,15 @@ Lincoln.on('message', function(message) {
     const helpembed = new Discord.MessageEmbed()
 	.setColor('#2ECC71')
 	.setTitle('Help')
-	.setAuthor('Lincoln', 'https://bit.ly/3mrvwJ0')
-	.setDescription("Here's is what Lincoln can do.")
-	.setThumbnail('https://bit.ly/3gtw914')
+	.setAuthor('Lincoln')
+	.setDescription("Here's what Lincoln can do.")
+	.setThumbnail('https://img.icons8.com/fluency/96/000000/help.png')
 	.addFields(
-		{ name: 'Maths', value: '`!add number1 number2` `!div number1 number2` `!mul number1 number2` `!sub number1 number2`', inline: true },
-		{ name: 'Moderator', value: '`!ban @user` `!kick @user` `!clear number of messages between 1 to 99`', inline: true },
-    { name: 'Games', value: '`!tictactoe @user or alone with Lincoln` `!snake`', inline: true },
-    { name: 'Music', value: '`!play` or if you want more commands and informations, go on the following link :link: : __***https://bit.ly/3knp2rU***__', inline: true },
-    { name: 'Other', value: '`!hello Lincoln` `!ping` `!about` `!tasks`', inline: true },
+		{ name: 'Maths', value: '`!add number1 number2` | `!div number1 number2` | `!mul number1 number2` | `!sub number1 number2`', inline: true },
+		{ name: 'Moderator', value: '`!ban @user` | `!kick @user` | `!clear number of messages between 1 to 99`', inline: true },
+    { name: 'Games', value: '`!tictactoe @user or alone with Lincoln` | `!snake`', inline: true },
+    { name: 'Music', value: '`!play` and if you want more commands and informations, go on the following link :link: : __***https://bit.ly/3knp2rU***__', inline: true },
+    { name: 'Other', value: '`!hello Lincoln` | `!ping` | `!about` | `!tasks`', inline: true },
 	)
 	.setTimestamp()
 	.setFooter('Lincoln at your service');
