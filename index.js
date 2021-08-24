@@ -123,10 +123,10 @@ Lincoln.on("message", function(message) {
 	.setDescription("Here's what Lincoln can do.")
 	.setThumbnail('https://img.icons8.com/fluency/96/000000/help.png')
 	.addFields(
-		{ name: 'Maths', value: '`!addi __***number1 number2***__` | `!div __***number1 number2***__` | `!mul __***number1 number2***__` | `!sub __***number1 number2***__`', inline: true },
+		{ name: 'Maths', value: '`!addi number1 number2` | `!div number1 number2` | `!mul number1 number2` | `!sub number1 number2`', inline: true },
 		{ name: 'Moderator', value: '`!ban @user` | `!kick @user` | `!clear number of messages between 1 to 99`', inline: true },
     { name: 'Games', value: '`!tictactoe @user or alone with Lincoln` | `!snake`', inline: true },
-    { name: 'Music', value: '`!play __***music name***__`  | `!skip`  | `!stop` | `!add __***music name***___`', inline: true },
+    { name: 'Music', value: '`!play music name`  | `!skip`  | `!stop` | `!add music name`', inline: true },
     { name: 'Other', value: '`!hello Lincoln` | `!ping` | `!about` | `!tasks`  | `!help`', inline: true },
 	)
 	.setTimestamp()
@@ -221,7 +221,7 @@ Lincoln.on('message', (message) => {
 
     const amount = Number(input) > 101
       ? 101
-      : Number(input) - 1;
+      : Number(input) + 1;
 
     message.channel.bulkDelete(amount, true)
 
