@@ -10,7 +10,7 @@ const TicTacToe = require('discord-tictactoe')
 
 const r = "RANDOM";
 
-const Lincoln = new Discord.Lincoln({intents: Object.getOwnPropertyNames(Discord.Intents.FLAGS)})
+const Lincoln = new Discord.Client({intents: Object.getOwnPropertyNames(Discord.Intents.FLAGS)})
 
 const prefix = "!";
 
