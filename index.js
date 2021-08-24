@@ -54,11 +54,12 @@ Lincoln.on('message', function(message) {
 	.setTimestamp()
 	.setFooter('Lincoln at your service');
 
-  channel.send(helpembed);
+  message.channel.send(helpembed);
 
   }
 
-  });
+  
+});
 
 Lincoln.on('message', function(message) {
   if (message.content === '!about') {
