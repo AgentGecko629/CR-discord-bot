@@ -113,10 +113,10 @@ Lincoln.on("message", function(message) {
     message.channel.send("Here is the link :link: to our official website : https://lincoln-bot.netlify.app")
   }
   
-  else if (command === "sub") {
+  else if (command === "minus") {
     const numArgs = args.map(x => parseFloat(x));
-    const sub = numArgs.reduce((counter, x) => counter -= x);
-    message.reply(`The result :arrow_forward: ${sub}:exclamation:`);
+    const minus = numArgs.reduce((counter, x) => counter -= x);
+    message.reply(`The result :arrow_forward: ${minus}:exclamation:`);
   }
 
   else if (command === 'help') {
@@ -127,7 +127,7 @@ Lincoln.on("message", function(message) {
 	.setDescription("Here's what Lincoln can do.")
 	.setThumbnail('https://img.icons8.com/fluency/96/000000/help.png')
 	.addFields(
-		{ name: 'Maths', value: '`!plus number1 number2` | `!div number1 number2` | `!mul number1 number2` | `!sub number1 number2`', inline: true },
+		{ name: 'Maths', value: '`!plus number1 number2` | `!div number1 number2` | `!mul number1 number2` | `!minus number1 number2`', inline: true },
 		{ name: 'Moderator', value: '`!ban @user` | `!kick @user` | `!clear number of messages between 1 to 99`', inline: true },
     { name: 'Games', value: '`!tictactoe @user or alone with Lincoln` | `!snake`', inline: true },
     { name: 'Music', value: '`!play music name`  | `!skip`  | `!stop` | `!add music name`', inline: true },
