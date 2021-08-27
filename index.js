@@ -18,7 +18,7 @@ new TicTacToe({language: 'en', command:'!tictactoe'}).attach(Lincoln);
 
 Lincoln.once('ready', (message) => {
    console.log("Lincoln is ready !")
-   Lincoln.user.setActivity("commands", {type: "LISTENING"});
+   Lincoln.user.setActivity("!commands", {type: "LISTENING"});
    console.clear()
 })
 
@@ -108,6 +108,10 @@ Lincoln.on("message", function(message) {
     const mul = numArgs.reduce((counter, x) => counter *= x);
     message.reply(`The result :arrow_forward: ${mul}:exclamation:`);
   }
+
+  else if (command === "website") {
+    message.channel.send("Here is the link :link: to our official website : lincoln-bot.netlify.app")
+  }
   
   else if (command === "sub") {
     const numArgs = args.map(x => parseFloat(x));
@@ -127,7 +131,7 @@ Lincoln.on("message", function(message) {
 		{ name: 'Moderator', value: '`!ban @user` | `!kick @user` | `!clear number of messages between 1 to 99`', inline: true },
     { name: 'Games', value: '`!tictactoe @user or alone with Lincoln` | `!snake`', inline: true },
     { name: 'Music', value: '`!play music name`  | `!skip`  | `!stop` | `!add music name`', inline: true },
-    { name: 'Other', value: '`!hello Lincoln` | `!ping` | `!about` | `!tasks`  | `!help`', inline: true },
+    { name: 'Other', value: '`!hello Lincoln` | `!ping` | `!about` | `!tasks`  | `!help`  | `!website`', inline: true },
 	)
 	.setTimestamp()
 	.setFooter('Lincoln at your service');
@@ -139,7 +143,7 @@ Lincoln.on("message", function(message) {
   else if (command === 'about') {
     const embed = new Discord.MessageEmbed()
     .setTitle("About Lincoln")
-    .setDescription("Lincoln :robot: has been created by DarkLight#3008 and NinDev#2933 :grinning: using nodejs (https://nodejs.org/en/) and the JavaScript programming language (https://developer.mozilla.org/en-US/docs/Web/JavaScript) !")
+    .setDescription("Lincoln :robot: has been created by DarkLight#3008 and NinDev#2933 :grinning: using nodejs (https://nodejs.org/en/) and the JavaScript programming language (https://developer.mozilla.org/en-US/docs/Web/JavaScript) ! Our official website : lincoln-bot.netlify.app")
     .setTimestamp()
     .setFooter("Lincoln is at your service")
     .setColor('#5DADE2')
