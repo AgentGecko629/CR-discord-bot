@@ -110,7 +110,7 @@ Lincoln.on("message", function(message) {
   }
 
   else if (command === "website") {
-    message.channel.send("Here is the link :link: to our official website : lincoln-bot.netlify.app")
+    message.channel.send("Here is the link :link: to our official website : https://lincoln-bot.netlify.app")
   }
   
   else if (command === "sub") {
@@ -143,7 +143,7 @@ Lincoln.on("message", function(message) {
   else if (command === 'about') {
     const embed = new Discord.MessageEmbed()
     .setTitle("About Lincoln")
-    .setDescription("Lincoln :robot: has been created by DarkLight#3008 and NinDev#2933 :grinning: using nodejs (https://nodejs.org/en/) and the JavaScript programming language (https://developer.mozilla.org/en-US/docs/Web/JavaScript) ! Our official website : lincoln-bot.netlify.app")
+    .setDescription("Lincoln :robot: has been created by DarkLight#3008 and NinDev#2933 :grinning: using nodejs (https://nodejs.org/en/) and the JavaScript programming language (https://developer.mozilla.org/en-US/docs/Web/JavaScript) ! Our official website : https://lincoln-bot.netlify.app")
     .setTimestamp()
     .setFooter("Lincoln is at your service")
     .setColor('#5DADE2')
