@@ -94,7 +94,7 @@ Lincoln.on("message", function(message) {
   else if (command === "plus") {
     const numArgs = args.map(x => parseFloat(x));
     const plus = numArgs.reduce((counter, x) => counter += x);
-    message.reply(`The result :arrow_forward: ${addi}:exclamation:`);
+    message.reply(`The result :arrow_forward: ${plus}:exclamation:`);
   }
   
    
