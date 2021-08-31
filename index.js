@@ -4,6 +4,8 @@ const SnakeGame = require('snakecord');
 
 const math = require('mathjs');
 
+const got = require('got');
+
 const { MusicBot } = require("discord-music-system");
 
 const TicTacToe = require('discord-tictactoe')
@@ -151,19 +153,25 @@ Lincoln.on("message", function(message) {
 
   }
 
-  if(command === "gif"){
-    const gifSearch = require('gif-search');
-    const gif = args.join(" ")
-    try{
-    gifSearch.query(gif).then((gifurl) =>{
-        const embed = new discord.MessageEmbed()
-            .setTitle("Result for "+saymessage)
-            .setImage(gifurl)
-            .setFooter("Requested by "+message.author.username)
-        message.channel.send(embed)
-    }).catch(error)}
-    catch(error){message.channel.send(":x: No gif found !")}
-}
+     if (message.content === "!meme") {
+        const embed = new Discord.MessageEmbed()
+        got('https://www.reddit.com/r/memes/random/.json').then(response => {
+            let content = JSON.parse(response.body);
+            let permalink = content[0].data.children[0].data.permalink;
+            let memeUrl = `https://reddit.com${permalink}`;
+            let memeImage = content[0].data.children[0].data.url;
+            let memeTitle = content[0].data.children[0].data.title;
+            let memeUpvotes = content[0].data.children[0].data.ups;
+            let memeDownvotes = content[0].data.children[0].data.downs;
+            let memeNumComments = content[0].data.children[0].data.num_comments;
+            embed.setTitle(`${memeTitle}`)
+            embed.setURL(`${memeUrl}`)
+            embed.setImage(memeImage)
+            embed.setColor(r)
+            embed.setFooter(`👍 ${memeUpvotes} 👎 ${memeDownvotes} 💬 ${memeNumComments}`)
+            message.channel.send(embed);
+        })
+    }
 
 });
 
