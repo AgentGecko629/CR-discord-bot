@@ -155,7 +155,7 @@ Lincoln.on("message", function(message) {
   }
 
      if (message.content === "!meme") {
-        const embed = new Discord.MessageEmbed()
+        const memeembed = new Discord.MessageEmbed()
         got('https://www.reddit.com/r/memes/random/.json').then(response => {
             let content = JSON.parse(response.body);
             let permalink = content[0].data.children[0].data.permalink;
@@ -169,8 +169,8 @@ Lincoln.on("message", function(message) {
             embed.setURL(`${memeUrl}`)
             embed.setImage(memeImage)
             embed.setColor(r)
-            embed.setFooter(`👍 ${memeUpvotes} 👎 ${memeDownvotes} 💬 ${memeNumComments}`)
-            message.channel.send(embed);
+            embed.setFooter(`👍 ${memeUpvotes} | 👎 ${memeDownvotes} | 💬 ${memeNumComments}`)
+            message.channel.send(memeembed);
         })
     }
 
