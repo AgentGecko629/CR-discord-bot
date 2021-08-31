@@ -23,6 +23,7 @@
     "discord-music-system": "^3.3.15",
     "discord-tictactoe": "^2.1.1",
     "discord.js": "^12.5.3",
+    "gif-search": "^2.1.0",
     "mathjs": "^9.4.4",
     "snakecord": "^1.0.8"
   }

@@ -151,6 +151,20 @@ Lincoln.on("message", function(message) {
 
   }
 
+  if(command === "gif"){
+    const gifSearch = require('gif-search');
+    const gif = args.join(" ")
+    try{
+    gifSearch.query(gif).then((gifurl) =>{
+        const embed = new discord.MessageEmbed()
+            .setTitle("Result for "+saymessage)
+            .setImage(gifurl)
+            .setFooter("Requested by "+message.author.username)
+        message.channel.send(embed)
+    }).catch(error)}
+    catch(error){message.channel.send(":x: No gif found !")}
+}
+
 });
 
 Lincoln.on('message', message => {
@@ -282,6 +296,7 @@ Lincoln.on('message', message => {
  }
 
 });
+
 
 
 Lincoln.login(process.env.token);
