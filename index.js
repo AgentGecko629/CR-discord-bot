@@ -133,6 +133,7 @@ Lincoln.on("message", function(message) {
 		{ name: 'Moderator', value: '`!ban @user` | `!kick @user` | `!clear number of messages between 1 to 99`', inline: true },
     { name: 'Games', value: '`!tictactoe @user or alone with Lincoln` | `!snake`', inline: true },
     { name: 'Music', value: '`!play music name`  | `!skip`  | `!stop` | `!add music name`', inline: true },
+    { name: 'Memes', value: '`!meme`', inline: true },
     { name: 'Other', value: '`!hello Lincoln` | `!ping` | `!about` | `!tasks`  | `!help`  | `!website`', inline: true },
 	)
 	.setTimestamp()
