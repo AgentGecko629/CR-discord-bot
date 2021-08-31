@@ -144,13 +144,13 @@ Lincoln.on("message", function(message) {
   }
 
   else if (command === 'about') {
-    const embed = new Discord.MessageEmbed()
+    const aboutembed = new Discord.MessageEmbed()
     .setTitle("About Lincoln")
     .setDescription("Lincoln :robot: has been created by DarkLight#3008 and NinDev#2933 :grinning: using nodejs (https://nodejs.org/en/) and the JavaScript programming language (https://developer.mozilla.org/en-US/docs/Web/JavaScript) ! Our official website : https://lincoln-bot.netlify.app")
     .setTimestamp()
     .setFooter("Lincoln is at your service")
     .setColor('#5DADE2')
-    message.channel.send(embed)
+    message.channel.send(aboutembed)
 
   }
 
@@ -165,11 +165,11 @@ Lincoln.on("message", function(message) {
             let memeUpvotes = content[0].data.children[0].data.ups;
             let memeDownvotes = content[0].data.children[0].data.downs;
             let memeNumComments = content[0].data.children[0].data.num_comments;
-            embed.setTitle(`${memeTitle}`)
-            embed.setURL(`${memeUrl}`)
-            embed.setImage(memeImage)
-            embed.setColor(r)
-            embed.setFooter(`👍 ${memeUpvotes} | 👎 ${memeDownvotes} | 💬 ${memeNumComments}`)
+            memeembed.setTitle(`${memeTitle}`)
+            memeembed.setURL(`${memeUrl}`)
+            memeembed.setImage(memeImage)
+            memeembed.setColor(r)
+            memeembed.setFooter(`👍 ${memeUpvotes} | 👎 ${memeDownvotes} | 💬 ${memeNumComments}`)
             message.channel.send(memeembed);
         })
     }
@@ -269,7 +269,7 @@ const snakeGame = new SnakeGame({
 
   title: 'Lincoln Snake Game',
 
-  color: "GREEN",
+  color: "RED",
 
   timestamp: false,
 
