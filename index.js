@@ -12,34 +12,34 @@ const TicTacToe = require('discord-tictactoe')
 
 const r = "RANDOM";
 
-const Lincoln = new Discord.Client({intents: Object.getOwnPropertyNames(Discord.Intents.FLAGS)})
+const Delta = new Discord.Client({intents: Object.getOwnPropertyNames(Discord.Intents.FLAGS)})
 
 const prefix = "!";
 
-new TicTacToe({language: 'en', command:'!tictactoe'}).attach(Lincoln);
+new TicTacToe({language: 'en', command:'!tictactoe'}).attach(Delta);
 
-Lincoln.once('ready', (message) => {
-   console.log("Lincoln is ready !")
-   Lincoln.user.setActivity("!commands", {type: "LISTENING"});
+Delta.once('ready', (message) => {
+   console.log("Delta is ready !")
+   Delta.user.setActivity("!commands", {type: "LISTENING"});
    console.clear()
 })
 
-Lincoln.musicBot = new MusicBot(Lincoln, {
+Delta.musicBot = new MusicBot(Delta, {
   ytApiKey: 'AIzaSyDfeiaNmxg-CDEwiWmVjyv1iAao7f7e9wA',
   prefix: '!',
   language: 'en'
 });
 
-Lincoln.on('message', async message => {
+Delta.on('message', async message => {
   if(message.author.bot) {
       return;
   };
-  Lincoln.musicBot.onMessage(message);
+  Delta.musicBot.onMessage(message);
 });
 
 
 
-Lincoln.on('message', function(message) {
+Delta.on('message', function(message) {
   if(message.content === "!tasks") {
     
     
@@ -48,12 +48,12 @@ Lincoln.on('message', function(message) {
   
 })
 
- Lincoln.on('message', function(message) {
-  if (message.content === '!hello Lincoln') {
+ Delta.on('message', function(message) {
+  if (message.content === '!hey') {
     message.reply(`Hello :wave:`);
   }
  });
-Lincoln.on("message", function(message) {
+Delta.on("message", function(message) {
   if (message.author.bot) return;
   if (!message.content.startsWith(prefix)) return;
 
@@ -112,7 +112,7 @@ Lincoln.on("message", function(message) {
   }
 
   else if (command === "website") {
-    message.channel.send("Here is the link :link: to our official website : https://lincoln-bot.netlify.app")
+    message.channel.send("Here is the link :link: to our official website : https://Delta-bot.netlify.app")
   }
   
   else if (command === "minus") {
@@ -125,19 +125,19 @@ Lincoln.on("message", function(message) {
     const helpembed = new Discord.MessageEmbed()
 	.setColor('#2ECC71')
 	.setTitle('Help')
-	.setAuthor('Lincoln')
-	.setDescription("Here's what Lincoln can do.")
+	.setAuthor('Delta')
+	.setDescription("Here's what Delta can do.")
 	.setThumbnail('https://img.icons8.com/fluency/96/000000/help.png')
 	.addFields(
 		{ name: 'Maths', value: '`!plus number1 number2` | `!div number1 number2` | `!mul number1 number2` | `!minus number1 number2`', inline: true },
 		{ name: 'Moderator', value: '`!ban @user` | `!kick @user` | `!clear number of messages between 1 to 99`', inline: true },
-    { name: 'Games', value: '`!tictactoe @user or alone with Lincoln` | `!snake`', inline: true },
+    { name: 'Games', value: '`!tictactoe @user or alone with Delta` | `!snake`', inline: true },
     { name: 'Music', value: '`!play music name`  | `!skip`  | `!stop` | `!add music name`', inline: true },
     { name: 'Memes', value: '`!meme`', inline: true },
-    { name: 'Other', value: '`!hello Lincoln` | `!ping` | `!about` | `!tasks`  | `!help`  | `!website`', inline: true },
+    { name: 'Other', value: '`!hey` | `!ping` | `!about` | `!tasks`  | `!help`  | `!website`', inline: true },
 	)
 	.setTimestamp()
-	.setFooter('Lincoln at your service');
+	.setFooter('Delta at your service :smiley:');
 
   message.channel.send(helpembed);
 
@@ -145,10 +145,10 @@ Lincoln.on("message", function(message) {
 
   else if (command === 'about') {
     const aboutembed = new Discord.MessageEmbed()
-    .setTitle("About Lincoln")
-    .setDescription("Lincoln :robot: has been created by DarkLight#3008 and NinDev#2933 :grinning: using nodejs (https://nodejs.org/en/) and the JavaScript programming language (https://developer.mozilla.org/en-US/docs/Web/JavaScript) ! Our official website : https://lincoln-bot.netlify.app")
+    .setTitle("About Delta")
+    .setDescription("Delta. :robot: has been created by Delta.#3008 and NinDev#2933 :grinning: using nodejs (https://nodejs.org/en/) and the JavaScript programming language (https://developer.mozilla.org/en-US/docs/Web/JavaScript) ! Our official website : https://Delta-bot.netlify.app")
     .setTimestamp()
-    .setFooter("Lincoln is at your service")
+    .setFooter("Delta is at your service")
     .setColor('#5DADE2')
     message.channel.send(aboutembed)
 
@@ -176,7 +176,7 @@ Lincoln.on("message", function(message) {
 
 });
 
-Lincoln.on('message', message => {
+Delta.on('message', message => {
   if (!message.guild) return;
 
   if (message.content.startsWith('!ban')) {
@@ -191,11 +191,11 @@ Lincoln.on('message', message => {
             reason: 'They were bad!',
           })
           .then(() => {
-            message.channel.send(`:white_check_mark: Lincoln successfully banned ${user.tag} !`);
+            message.channel.send(`:white_check_mark: Delta successfully banned ${user.tag} !`);
             
           })
           .catch(err => {
-            message.channel.send(':x: Lincoln is unable to ban this member !');
+            message.channel.send(':x: Delta is unable to ban this member !');
             console.error(err);
           });
       } else {
@@ -208,7 +208,7 @@ Lincoln.on('message', message => {
   
 });
 
-Lincoln.on('message', (message) => {
+Delta.on('message', (message) => {
   if (!message.content.startsWith(prefix) || message.author.bot) return;
 
   const args = message.content
@@ -255,7 +255,7 @@ Lincoln.on('message', (message) => {
     .then((_message) => {
       message.channel
 
-        .send(`:white_check_mark: Lincoln successfully cleared \`${_message.size}\` messages :broom: |  __***This message will be deleted in 5 seconds...***__`)
+        .send(`:white_check_mark: Delta successfully cleared \`${_message.size}\` messages :broom: |  __***This message will be deleted in 5 seconds...***__`)
         .then((sent) => {
           setTimeout(() => {
             sent.delete();
@@ -267,7 +267,7 @@ Lincoln.on('message', (message) => {
 
 const snakeGame = new SnakeGame({
 
-  title: 'Lincoln Snake Game',
+  title: 'Delta Snake Game',
 
   color: "RED",
 
@@ -286,7 +286,7 @@ const config = {
 }
 
 
-Lincoln.on('message', message => {
+Delta.on('message', message => {
 
  if(!message.content.startsWith(config.prefix) || message.author.bot) return;
 
@@ -308,4 +308,5 @@ Lincoln.on('message', message => {
 
 
 
-Lincoln.login(process.env.token);
+Delta.login(process.env.token);
+
